@@ -88,6 +88,8 @@ ggsave("B.png", dpi = 500, width = 3, height = 3)
 plot_grid(c_GenePlot, c_DiseasePlot)
 ggsave("C.png", dpi = 500, width = 3, height = 3)
 
+# More things to consider: Subsample or random sampling, outliers, stats on them, etc
+
 ```
 
 
