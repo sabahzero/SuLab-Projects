@@ -41,26 +41,28 @@ ggsave("a_DiseasePlot.png", dpi = 500, width = 4, height = 4)
 library(plyr)
 # packageVersion("plyr") # v1.8.4
 
-GeneCount <- count(ClinGen, GENE_SYMBOL) # Frequency by Gene
-b_GeneCount <- subset(GeneCount, n > 1) # 100 show up more than once
-b_GenePlot <- ggplot(b_GeneCount, aes(x = GENE_SYMBOL, y = n)) + 
+GeneCount <- count(ClinGen, "GENE_SYMBOL") # Frequency by Gene
+# may need to remove quotations, depending on bug
+b_GeneCount <- subset(GeneCount, freq > 1) # 100 show up more than once
+# may need to change freq to n, depending on bug
+b_GenePlot <- ggplot(b_GeneCount, aes(x = GENE_SYMBOL, y = freq)) + 
   geom_bar(stat="identity", fill = "#0073C2FF") +
   theme_pubclean() 
 ggsave("b_GenePlot.png", dpi = 500, width = 4, height = 4)
-c_GeneCount <- subset(GeneCount, n > 2) # 35 of those show up more than twice
-c_GenePlot <- ggplot(c_GeneCount, aes(x = GENE_SYMBOL, y = n)) + 
+c_GeneCount <- subset(GeneCount, freq > 2) # 35 of those show up more than twice
+c_GenePlot <- ggplot(c_GeneCount, aes(x = GENE_SYMBOL, y = freq)) + 
   geom_bar(stat="identity", fill = "#0073C2FF") +
   theme_pubclean() 
 ggsave("c_GenePlot.png", dpi = 500, width = 4, height = 4)
 
-DiseaseCount <- count(ClinGen, DISEASEID_MONDO) # Frequency by Disease
-b_DiseaseCount <- subset(DiseaseCount, n > 1) # 55 show up more than once
-b_DiseasePlot <- ggplot(b_DiseaseCount, aes(x = DISEASEID_MONDO, y = n)) + 
+DiseaseCount <- count(ClinGen, "DISEASEID_MONDO") # Frequency by Disease
+b_DiseaseCount <- subset(DiseaseCount, freq > 1) # 55 show up more than once
+b_DiseasePlot <- ggplot(b_DiseaseCount, aes(x = DISEASEID_MONDO, y = freq)) + 
   geom_bar(stat="identity", fill = "#FFA500") +
   theme_pubclean() 
 ggsave("b_DiseasePlot.png", dpi = 500, width = 4, height = 4)
-c_DiseaseCount <- subset(DiseaseCount, n > 20) # 7 of those more than 20x 
-c_DiseasePlot <- ggplot(c_DiseaseCount, aes(x = DISEASEID_MONDO, y = n)) + 
+c_DiseaseCount <- subset(DiseaseCount, freq > 20) # 7 of those more than 20x 
+c_DiseasePlot <- ggplot(c_DiseaseCount, aes(x = DISEASEID_MONDO, y = freq)) + 
   geom_bar(stat="identity", fill = "#FFA500") +
   theme_pubclean() 
 ggsave("c_DiseasePlot.png", dpi = 500, width = 4, height = 4)
