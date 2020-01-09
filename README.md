@@ -1,4 +1,5 @@
 # SuLab-Projects
-Su Lab Research Items at Scripps Research
+Su Lab Research Project Items at Scripps Research
+est. September 2019 
 
 https://github.com/SuLab
