@@ -1,7 +1,7 @@
 # Su Lab Mini-Project (Dec 2019 - )
 
-Su Lab repository: https://github.com/SuLab
-SuLab > GeneWikiCentral > Issues: https://github.com/SuLab/GeneWikiCentral/issues/50
+Su Lab repository: https://github.com/SuLab </br>
+SuLab > GeneWikiCentral > Issues: https://github.com/SuLab/GeneWikiCentral/issues/50 </br>
 Uploaded in SuLab > scheduled_bots > x
 Scheduled in Jenkins: x
 
